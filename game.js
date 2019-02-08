@@ -65,5 +65,14 @@ qwerty.addEventListener('click', (e) => {
     target.className = 'chosen';
     target.setAttribute('disabled', '');
     let letterFound = checkLetter(button);
+
+    //check misses in game
+    if (letterFound === null) {
+      const score = document.getElementsByTagName('img');
+      for (let i = 0; i < score.length; i++) {
+        score[missed].src = 'images/lostHeart.png';
+      }
+      missed += 1;
+    }
   }
 });
