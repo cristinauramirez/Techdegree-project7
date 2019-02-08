@@ -18,3 +18,11 @@ let phrases = [
 startGame.addEventListener('click', (e) => {
   overlay.style.display = 'none';
 });
+
+//random phrase array function
+function getRandomPhraseArray(arr) {
+  let randomPhrase = arr[Math.floor(Math.random() * arr.length)];
+  return randomPhrase.split('');
+}
+
+getRandomPhraseArray(phrases);
