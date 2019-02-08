@@ -1,6 +1,7 @@
 
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
+const ul = phrase.querySelector('ul');
 
 const startGame = document.querySelector('a');
 
@@ -25,4 +26,21 @@ function getRandomPhraseArray(arr) {
   return randomPhrase.split('');
 }
 
-getRandomPhraseArray(phrases);
+//setting the game display
+function addPhraseToDisplay(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    li = document.createElement('li');
+    if (arr[i] != ' ') {
+      li.className = 'letter';
+      li.textContent = arr[i];
+      ul.appendChild(li);
+    } else {
+      li.className = 'space';
+      li.textContent = arr[i];
+      ul.appendChild(li);
+    }
+  }
+}
+
+const phraseArray = getRandomPhraseArray(phrases);
+addPhraseToDisplay(phraseArray);
