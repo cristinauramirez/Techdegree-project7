@@ -56,3 +56,14 @@ function checkLetter(button) {
     }
   } return letterFound;
 }
+
+//keyboard event listener
+qwerty.addEventListener('click', (e) => {
+  const target = e.target;
+  const button = target.textContent;
+  if (target.type === 'submit') {
+    target.className = 'chosen';
+    target.setAttribute('disabled', '');
+    let letterFound = checkLetter(button);
+  }
+});
