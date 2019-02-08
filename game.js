@@ -44,3 +44,15 @@ function addPhraseToDisplay(arr) {
 
 const phraseArray = getRandomPhraseArray(phrases);
 addPhraseToDisplay(phraseArray);
+
+//check letter function
+function checkLetter(button) {
+  let letterFound = null;
+  let letter = ul.children;
+  for (let i = 0; i < letter.length; i++) {
+    if (letter[i].textContent.toLowerCase() === button) {
+      letter[i].classList.add('show');
+      letterFound = true;
+    }
+  } return letterFound;
+}
